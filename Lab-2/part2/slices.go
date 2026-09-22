@@ -1,6 +1,7 @@
 package main
 
-import "fmt"
+import ("fmt"
+	"slices")
 
 func main() {
 
@@ -20,6 +21,12 @@ func main() {
 	index := 1
     s = append(s[:index], s[index+1:]...)
     fmt.Println("After removing index", index, ":", s)
+	
+	// delete for the range of index
+	startIndex := 1
+	endIndex := 3
+	s = append(s[:startIndex], s[endIndex:]...)
+	fmt.Println("After removing range of index", startIndex, "to", endIndex-1, ":", s)
 
 	// Update
 	s[1] = "Shivam"

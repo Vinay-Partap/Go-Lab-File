@@ -1,6 +1,11 @@
 package main
 
-import "fmt"
+import (
+	"bufio"
+	"fmt"
+	"os"
+	
+)
 
 type Person struct {
 	Name string
@@ -10,17 +15,23 @@ type Person struct {
 }
 
 func (p *Person) read(){
-	fmt.Println("Enter name:")
-	fmt.Scanln(&p.Name)
-
-	fmt.Println("Enter age:")
-	fmt.Scanln(&p.Age)
-
-	fmt.Println("Enter job:")
-	fmt.Scanln(&p.Job)
 	
-	fmt.Println("Enter salary:")
-	fmt.Scanln(&p.Salary)
+	reader := bufio.NewReader(os.Stdin)
+
+	fmt.Print("Enter Name: ")
+	fmt.Scan(&p.Name)
+	reader.ReadLine()
+
+	fmt.Print("Enter Age: ")
+	fmt.Scan(&p.Age)
+
+	fmt.Print("Enter Job: ")
+	fmt.Scan(&p.Job)
+	reader.ReadLine()
+	
+
+	fmt.Print("Enter Salary: ")
+	fmt.Scan(&p.Salary)
 }
 
 func (p *Person) display(){
@@ -31,6 +42,8 @@ func (p *Person) display(){
 }
 
 func main() {
+
+
 	var p1 Person
 	fmt.Println("Enter details for person 1:")
 	p1.read()

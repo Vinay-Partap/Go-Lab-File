@@ -1,0 +1,16 @@
+# Go
+*.exe
+*.test
+vendor/
+
+# F#
+**/bin/
+**/obj/
+
+# Python
+__pycache__/
+*.pyc
+
+# VS Code
+.vscode/
+.py
